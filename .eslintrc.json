@@ -1,0 +1,26 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "semi": "error",
+    "no-trailing-spaces": "error",
+    "eol-last": "error",
+    "for-direction": "error",
+    "no-cond-assign": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "prefer-arrow-callback": "error",
+    "object-curly-spacing": [ "error", "always" ],
+    "semi-spacing": "error",
+    "no-confusing-arrow": "error",
+    "no-constant-condition": "error",
+    "keyword-spacing": "error",
+    "no-unused-vars": "error",
+    "no-use-before-define": ["error", { "functions": false, "classes": true, "variables": false }]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "easyrandom",
+  "version": "1.0.0",
+  "description": "easy ier to use random with nicer helper functions than actually using random",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/lab -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctrlaltcookie/easyrandom.git"
+  },
+  "keywords": [
+    "easy",
+    "random"
+  ],
+  "author": "Remi Butler",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ctrlaltcookie/easyrandom/issues"
+  },
+  "homepage": "https://github.com/ctrlaltcookie/easyrandom#readme",
+  "devDependencies": {
+    "@hapi/code": "^5.3.1",
+    "@hapi/lab": "^19.1.0",
+    "eslint": "^6.0.1"
+  }
+}
