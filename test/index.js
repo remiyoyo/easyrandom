@@ -13,7 +13,7 @@ describe('Easy random', () => {
 
     it('Should return a number between 0 and 100', () => {
       const percents = [];
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < 1000; i++) {
         percents.push(easyRandom.getPercent());
       }
 
@@ -56,8 +56,14 @@ describe('Easy random', () => {
   describe('GetBetween', () => {
 
     it('Should return a number between 2 and 4 inclusive', () => {
-      const result = easyRandom.getBetween(2, 4);
-      expect(result).to.be.between(1, 5);
+      const results = [];
+      for (let i = 0; i < 100; i++) {
+        results.push(easyRandom.getBetween(4, 14));
+      }
+
+      results.forEach(result => {
+        expect(result).to.be.within(4, 14);
+      });
     });
 
     it('Should return min if min and max are equal', () => {
@@ -65,14 +71,9 @@ describe('Easy random', () => {
       expect(result).to.equal(2);
     });
 
-    it('Should allow negative numbers', () => {
-      const result = easyRandom.getBetween(-2, -4);
-      expect(result).to.be.between(-5, -1);
-    });
-
     it('Should parse numbers', () => {
       const result = easyRandom.getBetween('1', '4');
-      expect(result).to.be.between(0, 5);
+      expect(result).to.be.within(1, 4);
     });
 
     it('Should return 0 for unparseable min', () => {
@@ -82,6 +83,32 @@ describe('Easy random', () => {
 
     it('Should return 0 for unparseable max', () => {
       const result = easyRandom.getBetween('1', 'bum');
+      expect(result).to.equal(0);
+    });
+
+    it('Should return a number between 1 and 6', () => {
+      const diceRolls = [];
+      for (let i = 0; i < 100; i++) {
+        diceRolls.push(easyRandom.getBetween(1,6));
+      }
+
+      diceRolls.forEach(roll => {
+        expect(roll).to.be.within(1,6);
+      });
+    });
+
+    it('Should return 0 if min is negative', () => {
+      const result = easyRandom.getBetween(-1, 10);
+      expect(result).to.equal(0);
+    });
+
+    it('Should return 0 if max is negative', () => {
+      const result = easyRandom.getBetween(0, -10);
+      expect(result).to.equal(0);
+    });
+
+    it('Should return 0 if max is < than min', () => {
+      const result = easyRandom.getBetween(10, 9);
       expect(result).to.equal(0);
     });
 

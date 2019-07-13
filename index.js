@@ -1,10 +1,10 @@
 /**
- * Returns a random whole number between 0 and 100;
+ * Returns a random whole number between 0 and 100 inclusive;
  *
  * @return {number} random whole number
  */
 function getPercent() {
-  return Math.floor(Math.random() * (100));
+  return Math.floor(Math.random() * 101);
 }
 
 /**
@@ -23,11 +23,11 @@ function getMax(max) {
     return 0;
   }
 
-  return Math.floor(Math.random() * (parsedMax));
+  return Math.floor(Math.random() * parsedMax);
 }
 
 /**
- * Returns a random whole number between min and max inclusive
+ * Returns a random positive whole number between min and max inclusive
  *
  * @param {number} min minimum random number
  * @param {number} max maxium random number
@@ -37,14 +37,16 @@ function getBetween(min, max) {
   const parsedMax = parseInt(max, 10);
   const parsedMin = parseInt(min, 10);
 
-  if (isNaN(parsedMax) || isNaN(parsedMin)) {
+  if (isNaN(parsedMax) || isNaN(parsedMin) || parsedMax <= 0 || parsedMin < 0 || parsedMax < parsedMin) {
     return 0;
   }
   if (parsedMax === parsedMin) {
     return parsedMin;
   }
 
-  return Math.floor(Math.random() * (parsedMax - parsedMin)) + parsedMin;
+  const rand = Math.floor(Math.random() * parsedMax);
+
+  return  (rand > parsedMin) ? rand : rand + parsedMin;
 }
 
 /**

@@ -23,11 +23,11 @@ Returns true or false randomly
 
 ### .getBetween(min, max)
 
-Returns a psuedorandom whole number between a minium and maximum inclusive, parses input and shortcuts if the inputs are equal, allows negative numbers. If ether input is not parseable it will return 0.
+Returns a psuedorandom positive whole number between a minium and maximum inclusive, parses input and shortcuts if the inputs are equal or the maximum is 0. If ether input is not parseable it will return 0.
 
 ### .getPercent()
 
-Returns a pseudorandom whole number between 0 and 100
+Returns a pseudorandom whole number between 0 and 100 inclusive
 
 ### .getMax(max)
 

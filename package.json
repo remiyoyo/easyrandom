@@ -4,7 +4,7 @@
   "description": "easy ier to use random with nicer helper functions than actually using random",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/lab -c"
+    "test": "./node_modules/.bin/lab -c -L"
   },
   "repository": {
     "type": "git",
