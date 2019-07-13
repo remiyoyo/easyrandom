@@ -1,4 +1,5 @@
 # EasyRandom
+[![Build Status](https://travis-ci.org/ctrlaltcookie/easyrandom.svg?branch=master)](https://travis-ci.org/ctrlaltcookie/easyrandom)
 
 Easy random is a bunch of simple random functions that i've gotten so sick of rewriting over the years, even if other people don't use it, this is useful to me. I'm not chill with important an insane number of dependencies either so this has two (ofc with sub dependencies sigh)
 
