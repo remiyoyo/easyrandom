@@ -21,7 +21,7 @@ const getMax = function (max) {
     return 0;
   }
 
-  return Math.floor(Math.random() * parsedMax);
+  return Math.floor(Math.random() * parsedMax + 1);
 };
 
 /**
@@ -42,9 +42,9 @@ const getBetween = function (min, max) {
     return parsedMin;
   }
 
-  const rand = Math.floor(Math.random() * parsedMax);
+  const rand = Math.floor(Math.random() * parsedMax + 1);
 
-  return  (rand > parsedMin) ? rand : rand + parsedMin;
+  return (rand > parsedMin) ? rand : rand + parsedMin;
 };
 
 /**

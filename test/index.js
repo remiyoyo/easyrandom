@@ -28,7 +28,7 @@ describe('Easy random', () => {
 
     it('Should return a number no larger than 1', () => {
       const result = easyRandom.getMax(1);
-      expect(result).to.below(1);
+      expect(result).to.below(2);
     });
 
     it('Should return number no larger than 3', () => {
