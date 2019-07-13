@@ -23,7 +23,7 @@ Returns true or false randomly
 
 ### getBetween
 
-Returns a random number between a minium and maximum you specify, parses input and shortcuts if the input are equal, allows negative numbers
+Returns a psuedorandom whole number between a minium and maximum you specify, parses input and shortcuts if the inputs are equal, allows negative numbers. If ether input is not parseable it will return 0.
 
 ### getPercent
 
@@ -31,4 +31,4 @@ Returns a number between 0 and 100
 
 ### getMax
 
-Returns a number between 0 and your maximum, it parses input and shortcuts if the input is 0, it will happily explode if you pass a number that's too big
+Returns a psuedorandom whole number between 0 and your maximum, it parses input and shortcuts if the input is 0, it will happily explode if you pass a number that's too big. If input is not parseable it will return 0.
