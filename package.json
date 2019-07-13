@@ -1,5 +1,5 @@
 {
-  "name": "easyrandom",
+  "name": "@remibutler/easyrandom",
   "version": "1.0.0",
   "description": "easy ier to use random with nicer helper functions than actually using random",
   "main": "index.js",
@@ -24,5 +24,8 @@
     "@hapi/code": "^5.3.1",
     "@hapi/lab": "^19.1.0",
     "eslint": "^6.0.1"
+  },
+  "dependencies": {
+    "npm": "^6.10.1"
   }
 }
