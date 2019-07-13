@@ -17,18 +17,18 @@ $ npm test
 
 Full list of functions and their expected returns, however there are jsdocs so this is just here for posterity
 
-### flipACoin
+### .flipACoin()
 
 Returns true or false randomly
 
-### getBetween
+### .getBetween(min, max)
 
-Returns a psuedorandom whole number between a minium and maximum you specify, parses input and shortcuts if the inputs are equal, allows negative numbers. If ether input is not parseable it will return 0.
+Returns a psuedorandom whole number between a minium and maximum inclusive, parses input and shortcuts if the inputs are equal, allows negative numbers. If ether input is not parseable it will return 0.
 
-### getPercent
+### .getPercent()
 
-Returns a number between 0 and 100
+Returns a pseudorandom whole number between 0 and 100
 
-### getMax
+### .getMax(max)
 
-Returns a psuedorandom whole number between 0 and your maximum, it parses input and shortcuts if the input is 0, it will happily explode if you pass a number that's too big. If input is not parseable it will return 0.
+Returns a psuedorandom whole number between 0 and your maximum inclusive, it parses input and shortcuts if the input is 0, it will happily explode if you pass a number that's too big. If input is not parseable it will return 0.
