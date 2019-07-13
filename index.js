@@ -3,9 +3,7 @@
  *
  * @return {number} random whole number
  */
-function getPercent() {
-  return Math.floor(Math.random() * 101);
-}
+const getPercent = () => Math.floor(Math.random() * 101);
 
 /**
  * Returns a random whole number between 0 and max inclusive
@@ -13,8 +11,8 @@ function getPercent() {
  * @param {number} max maxium random number
  * @return {number} random whole number
  */
-function getMax(max) {
-  const parsedMax = parseInt(max, 10);
+const getMax = function (max) {
+  const parsedMax = Math.floor(parseInt(max, 10));
 
   if (parsedMax === 0) {
     return 0;
@@ -24,7 +22,7 @@ function getMax(max) {
   }
 
   return Math.floor(Math.random() * parsedMax);
-}
+};
 
 /**
  * Returns a random positive whole number between min and max inclusive
@@ -33,9 +31,9 @@ function getMax(max) {
  * @param {number} max maxium random number
  * @return {number} random whole number
  */
-function getBetween(min, max) {
-  const parsedMax = parseInt(max, 10);
-  const parsedMin = parseInt(min, 10);
+const getBetween = function (min, max) {
+  const parsedMax = Math.floor(parseInt(max, 10));
+  const parsedMin = Math.floor(parseInt(min, 10));
 
   if (isNaN(parsedMax) || isNaN(parsedMin) || parsedMax <= 0 || parsedMin < 0 || parsedMax < parsedMin) {
     return 0;
@@ -47,15 +45,13 @@ function getBetween(min, max) {
   const rand = Math.floor(Math.random() * parsedMax);
 
   return  (rand > parsedMin) ? rand : rand + parsedMin;
-}
+};
 
 /**
  * Flips a coin, heads is true, tails is false
  * @return {boolean} boolean
  */
-const flipACoin = function () {
-  return Math.random() > 0.5;
-};
+const flipACoin = () => Math.random() > 0.5;
 
 module.exports = {
   flipACoin,
