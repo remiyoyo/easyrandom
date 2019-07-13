@@ -1,6 +1,6 @@
 {
   "name": "@remibutler/easyrandom",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "easy ier to use random with nicer helper functions than actually using random",
   "main": "index.js",
   "scripts": {
