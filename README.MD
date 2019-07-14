@@ -2,17 +2,30 @@
 [![Build Status](https://travis-ci.org/ctrlaltcookie/easyrandom.svg?branch=master)](https://travis-ci.org/ctrlaltcookie/easyrandom)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-Easy random is a bunch of simple random functions that i've gotten so sick of rewriting over the years, even if other people don't use it, this is useful to me. I'm not chill with importing an insane number of dependencies either, so this has two (ofc with sub dependencies, sigh)
+Easy random is a bunch of simple random functions that I've gotten sick of rewriting in basically every npm package. No one likes dependencies so this doesn't have any. Well okay there are 3 dev dependencies for testing, but you don't have to install those in production, lucky you.
 
 ## Install
 
+Readme's always have installation instructions so why would this one be any different.
+
 ```bash
-$ npm install @remildabutler/easyrandom
+$ npm install @remibutler/easyrandom
+```
+
+If you want to use this in production, and you should because it's better than your package, use the --production arg so you wont get any dev-dependencies installed.
+
+```bash
+$ npm ci @remibutler/easyrandom --production
 ```
 
 ## Testing
 
-Testing is done with hapi/lab as the test runner and hapi/code as the expectation library, simple because they're both very easy to use and hyper obvious.
+Testing is done with:
+
+* [@hapi/lab](https://github.com/hapijs/lab) as the test runner and linter
+* [@hapi/code](https://github.com/hapijs/code) as the expectation library
+
+This is simply because they're both very easy to use and hyper obvious, also they're basically mocha and chai, wait why don't we just use mo-
 
 ```bash
 $ npm ci
@@ -26,7 +39,7 @@ const easyRandom = require('@remibutler/easyrandom');
 const coin = easyRandom.flipACoin();
 ```
 
-Full list of functions and their expected returns, however there are jsdocs so this is just here for posterity
+Full list of functions and their expected returns, there are jsdocs but you might wanna use runkit on npmjs so... here ya go!
 
 ### .flipACoin()
 
@@ -59,3 +72,39 @@ Returns a psuedorandom whole number between 0 and your maximum inclusive, it par
 ```javascript
 easyRandom.getMax(200) // returns a whole number from 0 to 200
 ```
+
+### .getString(length (optional))
+
+Returns a pseudorandom alphanumeric string of optional length, deafult length is 7. Returns empty string for 0 length.
+
+```javascript
+easyRandom.getString(20) // returns a random alphanumeric string of 20 characters
+```
+
+### .getStringNonNumeric(length (optional))
+
+Returns a pseudorandom alpha string of optional length, default length is 7. Returns empty string for 0 length.
+
+```javascript
+easyRandom.getStringNonNumeric(20) // returns a random alpha string of 20 characters
+```
+
+### .getStringWithCustomCharacterSet(length (optional), characterset (optional))
+
+Retruns a string inside a custom character set of optional length, defaults to alphanumeric and length of 7. Returns empty string for 0 length.
+
+```javascript
+easyRandom.getStringWithCustomCharacterSet(20, 'YOURFACE') // retrns a random string from characterset provided of 20 characters
+```
+
+## Todo
+
+This is functionality i need to ~~shamelessly steal~~ add.
+
+### .getDate()
+
+Returns a pseudorandom date.
+
+### .getDateBetween(minimum, maximum)
+
+Returns a date between two dates, accepts two date objects, returns today if minimum is larger than maximum or if either isn't a date.

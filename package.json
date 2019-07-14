@@ -12,7 +12,10 @@
   },
   "keywords": [
     "easy",
-    "random"
+    "random",
+    "helper functions",
+    "random dates",
+    "random string"
   ],
   "author": "Remi Butler",
   "license": "GPL-3.0",

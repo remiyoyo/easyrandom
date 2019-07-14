@@ -53,9 +53,51 @@ const getBetween = function (min, max) {
  */
 const flipACoin = () => Math.random() > 0.5;
 
+const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
+/**
+ * Returns a random string in the characterset ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+ *
+ * @param {number} length specify the length of the string defaults to 7
+ */
+const getString = (length = 7) => getStringWithCustomCharacterSet(length);
+
+/**
+ * Returns a random string in the characterset ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+ *
+ * @param {number} length specify the length of the string defaults to 7
+ */
+const getStringNonNumeric = (length = 7) => getStringWithCustomCharacterSet(length, alpha);
+
+/**
+ * Returns a random string with custom character set
+ *
+ * @param {number} length specify the length of the string defaults to 7
+ * @param {string} charSet specify the charSet defaults to alpha numeric
+ */
+const getStringWithCustomCharacterSet = (length = 7, charSet = alpha + '0123456789') => {
+  if (length < 1) {
+    return '';
+  }
+  if (charSet.length === 1) {
+    return charSet.repeat(length);
+  }
+
+  let str = '';
+  for (let i = 0; i < length; i ++) {
+    // because of inclusive max
+    const position = getMax(charSet.length - 1);
+    str += charSet.charAt(position);
+  }
+  return str;
+};
+
 module.exports = {
   flipACoin,
   getBetween,
   getPercent,
-  getMax
+  getMax,
+  getString,
+  getStringWithCustomCharacterSet,
+  getStringNonNumeric
 };
