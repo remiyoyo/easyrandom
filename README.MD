@@ -75,7 +75,7 @@ easyRandom.getMax(200) // returns a whole number from 0 to 200
 
 ### .getString(length (optional))
 
-Returns a pseudorandom alphanumeric string of optional length, deafult length is 7. Returns empty string for 0 length.
+Returns a pseudorandom alphanumeric string of optional length, default length is 7. Returns empty string for 0 length.
 
 ```javascript
 easyRandom.getString(20) // returns a random alphanumeric string of 20 characters
@@ -91,10 +91,10 @@ easyRandom.getStringNonNumeric(20) // returns a random alpha string of 20 charac
 
 ### .getStringWithCustomCharacterSet(length (optional), characterset (optional))
 
-Retruns a string inside a custom character set of optional length, defaults to alphanumeric and length of 7. Returns empty string for 0 length.
+Returns a string inside a custom character set of optional length, defaults to alphanumeric and length of 7. Returns empty string for 0 length.
 
 ```javascript
-easyRandom.getStringWithCustomCharacterSet(20, 'YOURFACE') // retrns a random string from characterset provided of 20 characters
+easyRandom.getStringWithCustomCharacterSet(20, 'YOURFACE') // returns a random string from characterset provided of 20 characters
 ```
 
 ## Todo
