@@ -1,11 +1,10 @@
 const easyRandom = require('../index');
-const Lab = require('@hapi/lab');
-const code = require('@hapi/code');
+const mocha = require('mocha');
+const chai = require('chai');
 
-const lab = exports.lab = Lab.script();
-const expect = code.expect;
-const it = lab.it;
-const describe = lab.describe;
+const expect = chai.expect;
+const it = mocha.it;
+const describe = mocha.describe;
 
 describe('Easy random', () => {
 
@@ -118,7 +117,7 @@ describe('Easy random', () => {
 
     it('Should return true or false', () => {
       const result = easyRandom.flipACoin();
-      expect(result).to.be.a.boolean();
+      expect(result).to.exist;
     });
 
   });
@@ -127,19 +126,19 @@ describe('Easy random', () => {
 
     it('Should return a random string of 7 characters', () => {
       const result = easyRandom.getString();
-      expect(result).to.be.a.string();
+      expect(result).to.be.a.string;
       expect(result.length).to.equal(7);
     });
 
     it('Should return a random string of 80 characters', () => {
       const result = easyRandom.getString(80);
-      expect(result).to.be.a.string();
+      expect(result).to.be.a.string;
       expect(result.length).to.equal(80);
     });
 
     it('Should return empty string when length is 0', () => {
       const result = easyRandom.getString(0);
-      expect(result).to.be.empty();
+      expect(result).to.be.empty;
     });
 
     it('Should return a string containing alpha numeric characters', () => {
@@ -153,19 +152,19 @@ describe('Easy random', () => {
 
     it('Should return a random string of 7 characters', () => {
       const result = easyRandom.getStringNonNumeric();
-      expect(result).to.be.a.string();
+      expect(result).to.be.a.string;
       expect(result.length).to.equal(7);
     });
 
     it('Should return a random string of 80 characters', () => {
       const result = easyRandom.getStringNonNumeric(80);
-      expect(result).to.be.a.string();
+      expect(result).to.be.a.string;
       expect(result.length).to.equal(80);
     });
 
     it('Should return empty string when length is 0', () => {
       const result = easyRandom.getStringNonNumeric(0);
-      expect(result).to.be.empty();
+      expect(result).to.be.empty;
     });
 
     it('Should return a string containing alpha numeric characters', () => {
@@ -179,20 +178,20 @@ describe('Easy random', () => {
 
     it('Should return a random string of 7 alphanumeric characters', () => {
       const result = easyRandom.getStringWithCustomCharacterSet();
-      expect(result).to.be.a.string();
+      expect(result).to.be.a.string;
       expect(result.length).to.equal(7);
       expect(result).to.match(/^[a-zA-Z0-9]*$/);
     });
 
     it('Should return a random string of 80 characters', () => {
       const result = easyRandom.getStringWithCustomCharacterSet(80);
-      expect(result).to.be.a.string();
+      expect(result).to.be.a.string;
       expect(result.length).to.equal(80);
     });
 
     it('Should return empty string when length is 0', () => {
       const result = easyRandom.getStringWithCustomCharacterSet(0);
-      expect(result).to.be.empty();
+      expect(result).to.be.empty;
     });
 
     it('Should return a string containing only ABC', () => {
